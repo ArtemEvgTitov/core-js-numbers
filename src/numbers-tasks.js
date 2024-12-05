@@ -286,10 +286,10 @@ function getFibonacciNumber(index) {
  */
 function getSumToN(n) {
   let result = 0;
-  let num = n;
-  while (num > 0) {
-    result += n;
-    num -= 1;
+  let num = 1;
+  while (num <= n) {
+    result += num;
+    num += 1;
   }
   return result;
 }
@@ -327,10 +327,7 @@ function getSumOfDigits(num) {
  *   15  => false
  */
 function isPowerOfTwo(num) {
-  if (num % 2 === 0) {
-    return true;
-  }
-  return false;
+  return num % 2 === 0;
 }
 
 /**
@@ -581,7 +578,8 @@ function getIntegerPartNumber(number) {
  * 0.1, 0.2, 0.3 => 0.6
  */
 function getSumOfNumbers(x1, x2, x3) {
-  return x1 + x2 + x3;
+  const sum = x1 + x2 + x3;
+  return Number.parseFloat(sum.toFixed(2));
 }
 
 /**
@@ -646,7 +644,7 @@ function getHypotenuse(a, b) {
 function getCountOfOddNumbers(number) {
   let start = 1;
   let count = 0;
-  while (start <= number) {
+  while (start <= Math.abs(number)) {
     if (start % 2 !== 0) {
       count += 1;
     }
